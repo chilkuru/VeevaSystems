@@ -17,6 +17,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import VeevaSystems.NBA.resources.base;
 
+/**
+ * @author Ragunath Chilkuru
+ *
+ */
 public class SeleniumUtilities extends base {
 
 	public WebDriver driver;
@@ -29,6 +33,11 @@ public class SeleniumUtilities extends base {
 		this.act = new Actions(driver);
 	}
 
+	/**
+	 * Switch the newly opened window.
+	 * 
+	 * @param originalWindow
+	 */
 	public void switchtoNewWindowHandleOpened(String originalWindow) {
 
 		Set<String> allWindowHandles = driver.getWindowHandles();
@@ -47,17 +56,23 @@ public class SeleniumUtilities extends base {
 
 	}
 
+	/**
+	 * Using Selenium Fluent wait for WebElement to be in a clickable state
+	 * 
+	 * @param element
+	 * @param maxWaitTime
+	 * @param pollingInterval
+	 */
 	public void waitForElementTobeClickable(final By element, int maxWaitTime, int pollingInterval) {
 		// Define a FluentWait instance
-		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10)) // Maximum wait
-																										// time
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10)) 
 				.pollingEvery(Duration.ofMillis(500)) // Polling interval
 				.ignoring(Exception.class); // Ignore exceptions during polling
 
 		// Wait for the element to be clickable
 		wait.until(new Function<WebDriver, WebElement>() {
 			public WebElement apply(WebDriver driver) {
-				WebElement ele = driver.findElement(element); // Replace with your element locator
+				WebElement ele = driver.findElement(element); 
 				if (ele.isDisplayed() && ele.isEnabled()) {
 					return ele;
 				}
@@ -66,6 +81,12 @@ public class SeleniumUtilities extends base {
 		});
 	}
 
+	/**
+	 * 
+	 * Using Explicit wait for the element to be loaded/visible in the DOM
+	 * @param element
+	 * @param timeOutInSeconds
+	 */
 	public void waitForElementTobeLoaded(final By element, int timeOutInSeconds) {
 		// Use WebDriverWait to wait for a specific element to load
 		WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds); // Timeout in seconds
@@ -74,37 +95,58 @@ public class SeleniumUtilities extends base {
 
 	}
 
+	/**
+	 * Waiting for the Modal window to close
+	 * @param element
+	 */
 	public void waitForModalToClose(final By element) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 20);
-//	        boolean isModalGone = wait.until(
-//	                ExpectedConditions.invisibilityOfElementLocated(wsp.ModalPopupShoppingWarriors));
-
+			WebDriverWait wait = new WebDriverWait(driver, 15);
 			boolean isModalGone = wait.until(ExpectedConditions.visibilityOfElementLocated(element)).isDisplayed();
 
 			if (!isModalGone) {
-				log.info("Modal disappeared.");
+				//log.info("Modal disappeared.");
+				//System.out.println("Modal disappeared.");
 			} else {
-				log.info("Modal is still visible.");
+				//log.info("Modal is still visible.");
+				//System.out.println("Modal is still visible.");
 			}
 
 		} catch (Exception e) {
-			log.info("An error occurred: " + e.getMessage());
+			//log.info("An error occurred: " + e.getMessage());
+			//System.out.println("An error occurred: " + e.getMessage());
 		}
 	}
 
+	/**
+	 * Using Actions class to Move To An Element
+	 * @param element
+	 */
 	public void moveToElement(final By element) {
 
 		act.moveToElement(driver.findElement(element)).build().perform();
 
 	}
 
+	/**
+	 * Using Actions class to Move To An Element and click on it
+	 * @param element
+	 */
 	public void moveToElementAndClick(final By element) {
 
 		act.moveToElement(driver.findElement(element)).click().build().perform();
 
 	}
 
+	
+	/**
+	 * 
+	 * Wait till the entire DOM is loaded by checking for document.readyState
+	 * @param driver
+	 */
+	/**
+	 * @param driver
+	 */
 	public void waitForPageLoad(WebDriver driver) {
 
 		// Create WebDriverWait instance
@@ -125,6 +167,14 @@ public class SeleniumUtilities extends base {
 		// System.out.println("Document Ready State: " + state);
 	}
 
+	/**
+	 * 
+	 * Get the child element text content with the Parent Element and Child Element By locator
+	 * @param driver
+	 * @param parentElement
+	 * @param locatorChild
+	 * @return
+	 */
 	public String getElementTextParentChild(WebDriver driver, WebElement parentElement, By locatorChild) {
 		try {
 			WebElement element = parentElement.findElement(locatorChild);
@@ -135,6 +185,10 @@ public class SeleniumUtilities extends base {
 		}
 	}
 
+	/**
+	 * Scroll into View a Web Element
+	 * @param ele
+	 */
 	public void scrolltoElement(WebElement ele) {
 
 		try {

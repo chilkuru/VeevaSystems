@@ -6,6 +6,11 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 public class ExtentReporterNG {
 	static ExtentReports extent;
 
+	/**
+	 * 
+	 * Set the parameters like ReportName, Document Title, Tester Name
+	 * @return
+	 */
 	public static ExtentReports getReportObject() {
 
 		String path = System.getProperty("user.dir") + "\\reports\\VeevaSystemsAssignmentReports.html";

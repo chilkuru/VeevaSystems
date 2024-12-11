@@ -3,9 +3,7 @@ package VeevaSystems.NBA.utilities;
 import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.ITestContext;
-import org.testng.ITestListener;
-import org.testng.ITestResult;
+import org.testng.*;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -29,14 +27,13 @@ public class Listeners extends base implements ITestListener {
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
 		extentTest.get().log(Status.PASS, "Test Passed");
-//		String testMethodName = result.getMethod().getMethodName();
-//		if (testMethodName == "fillJacketsDataForCoreProduct") {
-		String csvFilePath = System.getProperty("user.dir") + "\\target\\data.csv";
-		test.info("Download the file: <a href='" + csvFilePath + "'>data.csv</a>");
 		
-//	}
 	}
+	
 
+	/**
+	 *  Upon Test failure update the test report with stack trace and append the screenshot with the failure.  
+	 */
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
 		// Screenshot
@@ -85,8 +82,8 @@ public class Listeners extends base implements ITestListener {
 //			//System.out.println(s.getMethodName());
 //
 //			if (s.getMethodName() == "fillJacketsDataForCoreProduct") {
-//				String csvFilePath = System.getProperty("user.dir") + "\\target\\data.csv";
-//				test.info("Download the file: <a href='" + csvFilePath + "'>data.csv</a>");
+				String csvFilePath = System.getProperty("user.dir") + "\\target\\data.csv";
+				test.info("Download the file: <a href='" + csvFilePath + "'>data.csv</a>");
 //				break;
 //			}
 //		}

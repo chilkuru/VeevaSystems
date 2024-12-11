@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="115737" started-at="2024-12-11T12:47:01Z" finished-at="2024-12-11T12:48:57Z">
+    <groups>
+    </groups>
+    <test name="Warriors Core Product Functionality Testing - Test 1" duration-ms="87853" started-at="2024-12-11T12:47:01Z" finished-at="2024-12-11T12:48:29Z">
+      <class name="VeevaSystems.NBA.Warriors.TestCase1CP">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:VeevaSystems.NBA.Warriors.TestCase1CP@71c3b41]" name="initialize" is-config="true" duration-ms="8981" started-at="2024-12-11T18:17:01Z" finished-at="2024-12-11T18:17:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="fillJacketsDataForCoreProduct()[pri:0, instance:VeevaSystems.NBA.Warriors.TestCase1CP@71c3b41]" name="fillJacketsDataForCoreProduct" duration-ms="78047" started-at="2024-12-11T18:17:10Z" finished-at="2024-12-11T18:18:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fillJacketsDataForCoreProduct -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:VeevaSystems.NBA.Warriors.TestCase1CP@71c3b41]" name="teardown" is-config="true" duration-ms="816" started-at="2024-12-11T18:18:28Z" finished-at="2024-12-11T18:18:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- VeevaSystems.NBA.Warriors.TestCase1CP -->
+    </test> <!-- Warriors Core Product Functionality Testing - Test 1 -->
+    <test name="Warriors Core Product Functionality Testing - Test 2" duration-ms="27618" started-at="2024-12-11T12:48:29Z" finished-at="2024-12-11T12:48:57Z">
+      <class name="VeevaSystems.NBA.Warriors.TestCase2CP">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:VeevaSystems.NBA.Warriors.TestCase2CP@2beee7ff]" name="initialize" is-config="true" duration-ms="6793" started-at="2024-12-11T18:18:29Z" finished-at="2024-12-11T18:18:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="findVideosCountAndVideosAgingMoreThan3Days()[pri:0, instance:VeevaSystems.NBA.Warriors.TestCase2CP@2beee7ff]" name="findVideosCountAndVideosAgingMoreThan3Days" duration-ms="20079" started-at="2024-12-11T18:18:36Z" finished-at="2024-12-11T18:18:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findVideosCountAndVideosAgingMoreThan3Days -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:VeevaSystems.NBA.Warriors.TestCase2CP@2beee7ff]" name="teardown" is-config="true" duration-ms="745" started-at="2024-12-11T18:18:56Z" finished-at="2024-12-11T18:18:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- VeevaSystems.NBA.Warriors.TestCase2CP -->
+    </test> <!-- Warriors Core Product Functionality Testing - Test 2 -->
+  </suite> <!-- Suite -->
+</testng-results>

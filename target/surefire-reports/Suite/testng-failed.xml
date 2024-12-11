@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" verbose="0" name="Failed suite [Suite]" parallel="tests">
+  <listeners>
+    <listener class-name="VeevaSystems.NBA.utilities.Listeners"/>
+  </listeners>
+  <test name="Warriors Core Product Functionality Testing - Test 2(failed)" parallel="tests">
+    <classes>
+      <class name="VeevaSystems.NBA.Warriors.TestCase2CP">
+        <methods>
+          <include name="findVideosCountAndVideosAgingMoreThan3Days"/>
+          <include name="teardown"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- VeevaSystems.NBA.Warriors.TestCase2CP -->
+      <class name="VeevaSystems.NBA.Warriors.TestCase1CP">
+        <methods>
+          <include name="teardown"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- VeevaSystems.NBA.Warriors.TestCase1CP -->
+    </classes>
+  </test> <!-- Warriors Core Product Functionality Testing - Test 2(failed) -->
+</suite> <!-- Failed suite [Suite] -->

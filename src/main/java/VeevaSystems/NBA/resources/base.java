@@ -13,7 +13,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -54,14 +53,7 @@ public class base {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 
-		} else if (browserName.equals("IE")) {
-//          //execute in IE driver
-//			System.setProperty("webdriver.ie.driver",
-//					System.getProperty("user.dir") + "\\src\\main\\java\\VeevaSystems.NBA.resources\\IEDriverServer.exe");
-
-			WebDriverManager.iedriver().setup();
-			driver = new InternetExplorerDriver();
-		}
+		} 
 
 		// driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 		// Maximize current window
